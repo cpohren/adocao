@@ -1,0 +1,139 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="col-lg-8">
+      <!-- 2. Add images to <div class="fotorama"></div>. -->
+      <style>
+        .fotorama1522617869150 .fotorama__nav--thumbs .fotorama__nav__frame {
+          padding: 2px;
+          height: 64px
+        }
+
+        .fotorama1522617869150 .fotorama__thumb-border {
+          height: 60px;
+          border-width: 2px;
+          margin-top: 2px
+        }
+      </style>
+      <div class="fotorama" data-nav="thumbs" data-width="100%" data-ratio="800/600" data-thumb-height "46">
+        <a href="./foto/juju1.jpg">
+          <img src="./foto/juju1.jpg">
+        </a>
+        <a href="./foto/juju2.jpg">
+          <img src="./foto/juju2.jpg">
+        </a>
+        <a href="./foto/juju3.jpg">
+          <img src="./foto/juju3.jpg">
+        </a>
+      </div>
+      <!-- // GALLERY START // -->
+      <!-- 
+                  IMPORTANT NOTE: Each property gallery must have an unique ID for the gallery 
+                          function to work properly. This unique ID must reflect the folder 
+                          name which contains all the corresponding property images.
+                          
+                          **Please refer to the documentation for further usage:
+                          * IMPORTANT:
+                          * id   = [PLACE IMAGE FOLDER NAME] 
+                          * data = [PLACE TEXT TO BE DISPLAYED FOR ATTENTION - LEAVE "" FOR BLANK]
+                          * num  = [NUMBER OF IMAGES AND CORRESPONDING THUMBNAILS WHICH WILL BE DISPLAYED]
+                -->
+
+      <!-- <div class="gallery"  id="property_name" data-sticker="HOT" data-num="20">
+                  <p>Please enable your javascript to view this gallery</p>
+                </div>
+                <! gallery end -->
+
+      <!-- about property -->
+      <div class="row-fluid property-info">
+        <h4><%= @animal.name %></h4>
+
+        <p class="description">
+        <%= @animal.description %>
+        </p>
+      </div>
+      <!-- end about property -->
+    </div>
+    <!-- end span8 -->
+
+    <div class="col-lg-4 col-md-4">
+      <!--key features-->
+      <h4>Características do animal:</h4>
+      <div class="property-info">
+        <ul class="property-info">
+          <li>
+            <strong>Nome:</strong> <%= @animal.name %></li>
+          <li>
+            <strong>Tipo:</strong> <%= @animal.kind %></li>  
+          <li>
+            <strong>Raça:</strong> <%= @animal.breed %></li>
+          <li>
+            <strong>Sexo:</strong> <%= @animal.gender %></li>  
+          <li>
+            <strong>Idade:</strong> <%= @animal.birth %></li>
+          <li>
+            <strong>Tamanho:</strong> <%= @animal.size %> </li>
+          <li>
+            <strong>Castrado:</strong> <%= @animal.neutered %></li> 
+          <li>
+            <strong>Vacinado:</strong> <%= @animal.vaccinated %></li>     
+        </ul>
+
+        <!--divider-->
+        <!-- <div class="divider"></div> -->
+
+        <!--single map-->
+        <!-- <h4>Localização:</h4>
+                <div id="map_canvas"></div> -->
+        <br>
+        <!--divider-->
+        <div class="divider"></div>
+        <!-- contact agent form -->
+        <div id="message"></div>
+        <form role="form">
+          <h3>Contato sobre este animal:</h3>
+          <div class="form-group">
+            <input class="form-control" placeholder="Nome" name="fullname" type="text">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" placeholder="Email" name="fullname" type="text">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" placeholder="Telefone" name="fullname" type="text">
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" rows="6" placeholder="Mensagem"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <input type="submit" value="Enviar" class="btn btn-success btn-block btn-lg" tabindex="7">
+            </div>
+          </div>
+        </form>
+        <!-- end contact agent form -->
+      </div>
+
+    </div>
+    <!-- end row-fluid -->
+
+  </div>
+  <!-- /.row -->
+
+
+
+  <!-- FOOTER -->
+  <footer class="col-md-12">
+    <br>
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>&copy; 2016 Company, Inc. &middot;
+      <a href="#">Privacy</a> &middot;
+      <a href="#">Terms</a>
+    </p>
+  </footer>
+
+</div>
+<!-- /.container -->
