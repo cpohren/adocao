@@ -50,6 +50,19 @@
         <p class="description">
         <%= @animal.description %>
         </p>
+        <h5>Files</h5>
+ 
+<ul>
+ <% @animal.files.each do |file| %>
+    <li><%= link_to file.filename, url_for(file) %></li>
+ <% end %>
+</ul>
+<h4 class="progress" style="display: none">Fazendo upload <span class="progress_count"></span>% concluido</h4>
+<%= form_with model: @animal, url: animal_file_uploads_path(@animal),
+              method: :post, id: "upload_file", local: true do |f| %>
+  <%= f.file_field :files, multiple: true, direct_upload: true %><br />
+  <%= f.submit 'Clique para fazer upload' %>
+<% end %>
       </div>
       <!-- end about property -->
     </div>
