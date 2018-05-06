@@ -17,3 +17,10 @@
 //= require bootstrap-sprockets
 //= require fotorama
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  // Actions to do
+  $('.fotorama').fotorama({
+      // options
+  })
+});
