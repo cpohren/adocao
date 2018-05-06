@@ -19,7 +19,7 @@
           <a href="<%= link_to file.filename, url_for(file) %>">
             <img src="<%= url_for(file) %>">
           </a>
-        <% end %>
+          <% end %>
       </div>
       <!-- // GALLERY START // -->
       <!-- 
@@ -41,28 +41,36 @@
 
       <!-- about property -->
       <div class="row-fluid property-info">
-        <h4><%= @animal.name %></h4>
+        <h4>
+          <%= @animal.name %>
+        </h4>
 
         <p class="description">
-        <%= @animal.description %>
+          <%= @animal.description %>
         </p>
+
+
         <h5>Files</h5>
- 
-<ul>
- <% @animal.files.each do |file| %>
-    <li><%= link_to file.filename, url_for(file) %></li>
- <% end %>
-</ul>
-<h4 class="progress" style="display: none">Fazendo upload <span class="progress_count"></span>% concluido</h4>
-<%= form_with model: @animal, url: animal_file_uploads_path(@animal),
+        <ul>
+          <% @animal.files.each do |file| %>
+            <li>
+              <%= link_to file.filename, url_for(file) %>
+            </li>
+            <% end %>
+        </ul>
+        <h4 class="progress" style="display: none">Fazendo upload
+          <span class="progress_count"></span>% concluido</h4>
+        <%= form_with model: @animal, url: animal_file_uploads_path(@animal),
               method: :post, id: "upload_file", local: true do |f| %>
-  <%= f.file_field :files, multiple: true, direct_upload: true %><br />
-  <%= f.submit 'Clique para fazer upload' %>
-<% end %>
+          <%= f.file_field :files, multiple: true, direct_upload: true %>
+            <br />
+            <%= f.submit 'Clique para fazer upload' %>
+              <% end %>
       </div>
       <!-- end about property -->
     </div>
     <!-- end span8 -->
+
 
     <div class="col-lg-4 col-md-4">
       <!--key features-->
@@ -70,21 +78,37 @@
       <div class="property-info">
         <ul class="property-info">
           <li>
-            <strong>Nome:</strong> <%= @animal.name %></li>
+            <strong>Nome:</strong>
+            <%= @animal.name %>
+          </li>
           <li>
-            <strong>Tipo:</strong> <%= @animal.kind %></li>  
+            <strong>Tipo:</strong>
+            <%= @animal.kind %>
+          </li>
           <li>
-            <strong>Raça:</strong> <%= @animal.breed %></li>
+            <strong>Raça:</strong>
+            <%= @animal.breed %>
+          </li>
           <li>
-            <strong>Sexo:</strong> <%= @animal.gender %></li>  
+            <strong>Sexo:</strong>
+            <%= @animal.gender %>
+          </li>
           <li>
-            <strong>Idade:</strong> <%= @animal.birth %></li>
+            <strong>Idade:</strong>
+            <%= @animal.birth %>
+          </li>
           <li>
-            <strong>Tamanho:</strong> <%= @animal.size %> </li>
+            <strong>Tamanho:</strong>
+            <%= @animal.size %>
+          </li>
           <li>
-            <strong>Castrado:</strong> <%= @animal.neutered %></li> 
+            <strong>Castrado:</strong>
+            <%= @animal.neutered %>
+          </li>
           <li>
-            <strong>Vacinado:</strong> <%= @animal.vaccinated %></li>     
+            <strong>Vacinado:</strong>
+            <%= @animal.vaccinated %>
+          </li>
         </ul>
 
         <!--divider-->
@@ -132,17 +156,7 @@
 
 
 
-  <!-- FOOTER -->
-  <footer class="col-md-12">
-    <br>
-    <p class="pull-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>&copy; 2016 Company, Inc. &middot;
-      <a href="#">Privacy</a> &middot;
-      <a href="#">Terms</a>
-    </p>
-  </footer>
+
 
 </div>
 <!-- /.container -->
