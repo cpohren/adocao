@@ -1,1 +1,24 @@
 <%= render 'form' %>
+<br>
+<h5>Pictures</h5>
+<div class="row">
+  <% @animal.files.each do |picture| %>
+    <div class="col-xs-6 col-md-2">
+      <a href="<%= url_for(picture) %>" target="_blank" class="thumbnail">
+        <img src="<%= url_for(picture) %>" alt="<%= picture.filename  %>" class="img-responsive" style="max-height:150px;">
+      </a>
+      <div class="actions" style="text-align:center">
+        <%= link_to "Remove", animal_file_upload_path(@animal, picture), method: :delete, data: { confirm: "Tem certeza?" }, class: 'btn btn-danger' %>
+      </div>
+      <br>
+    </div>
+  <% end %>
+</div>
+<h4 class="progress" style="display: none">Fazendo upload
+  <span class="progress_count"></span>% concluido</h4>
+<%= form_with model: @animal, url: animal_file_uploads_path(@animal),
+      method: :post, id: "upload_file", local: true do |f| %>
+  <%= f.file_field :files, multiple: true, direct_upload: true %>
+    <br />
+    <%= f.submit 'Clique para fazer upload' %>
+      <% end %>

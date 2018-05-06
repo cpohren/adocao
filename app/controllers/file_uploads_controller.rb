@@ -6,6 +6,11 @@ end
 def create
   @animal = Animal.find(params[:animal_id])
   @animal.files.attach(params[:animal][:files])
-  redirect_to animal_path(@animal)
+  redirect_to edit_animal_path(@animal)
+end
+def destroy
+  @animal = Animal.find(params[:animal_id])
+  @animal.files.find(params[:id]).purge
+  redirect_to edit_animal_path(@animal)
 end
 end
