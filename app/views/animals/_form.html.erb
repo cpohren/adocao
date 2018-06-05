@@ -1,4 +1,5 @@
 <%= simple_form_for @animal, defaults: { input_html: { class: 'form-horizontal' } } do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %> 
   <%= f.input :name %>
   <%= f.input :kind %>
   <%= f.input :breed %>

@@ -3,7 +3,7 @@ class AnimalsController < ApplicationController
         @animals = Animal.all
     end
     def mine 
-      @animals = Animal.all
+      @animals = current_user.animals.all
     end
     def show 
         @animal = Animal.find(params[:id])
@@ -40,7 +40,7 @@ class AnimalsController < ApplicationController
       end
       private 
       def animal_params
-        params.require(:animal).permit(:name, :kind, :breed, :gender, :birth, :size, :neutered, :vaccinated, :description)
+        params.require(:animal).permit(:name, :kind, :breed, :gender, :birth, :size, :neutered, :vaccinated, :description, :user_id)
       end
 
   end

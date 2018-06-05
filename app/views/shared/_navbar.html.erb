@@ -15,8 +15,10 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="<%= 'active' if current_page?(animals_path) %>"> <a href="<%= animals_path %>">Adotar</a> </li>
-                <li class="<%= 'active' if current_page?(new_animal_path) %>"> <a href="<%= new_animal_path %>">Cadastrar Animal</a> </li>
-                <li class="<%= 'active' if current_page?(mine_animals_path) %>"> <a href="<%= mine_animals_path %>">Meus Animais</a> </li>
+                 <% if user_signed_in? %>
+                    <li class="<%= 'active' if current_page?(new_animal_path) %>"> <a href="<%= new_animal_path %>">Cadastrar Animal</a> </li>
+                    <li class="<%= 'active' if current_page?(mine_animals_path) %>"> <a href="<%= mine_animals_path %>">Meus Animais</a> </li>
+                <% end%>
                 <li><a href="#contact">Sobre Nós</a></li>               
               </ul>
             <ul class="nav navbar-nav navbar-right">
