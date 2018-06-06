@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem "fotoramajs"
 gem 'devise'
+gem 'enumerize'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
