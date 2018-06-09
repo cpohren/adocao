@@ -38,6 +38,14 @@ class AnimalsController < ApplicationController
           end
         end
       end
+      def destroy
+        @animal = Animal.find(params[:id])
+        @animal.destroy
+        respond_to do |format|
+          format.html { redirect_to mine_animals_url, notice: 'Animal was successfully destroyed.' }
+        end
+      end
+      
       private 
       def animal_params
         params.require(:animal).permit(:name, :kind, :breed, :gender, :birth, :size, :neutered, :vaccinated, :description, :user_id)
