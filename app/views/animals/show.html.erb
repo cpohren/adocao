@@ -93,22 +93,23 @@
         <div class="divider"></div>
         <!-- contact agent form -->
         <div id="message"></div>
-        <form role="form">
+        <form role="form" method="post" action="<%= contact_animals_path %>" id="contactform" autocomplete="off">
           <h3>Contato sobre este animal:</h3>
+          <input class="form-control"  type="hidden" name="animal_id" value=<%= @animal.id %>>
           <div class="form-group">
-            <input class="form-control" placeholder="Nome" name="fullname" type="text">
+            <input class="form-control" placeholder="Nome" name="name_contact" type="text">
           </div>
 
           <div class="form-group">
-            <input class="form-control" placeholder="Email" name="fullname" type="text">
+            <input class="form-control"  type="email" placeholder="Email" name="email_contact" type="text">
           </div>
 
           <div class="form-group">
-            <input class="form-control" placeholder="Telefone" name="fullname" type="text">
+            <input class="form-control" placeholder="Telefone" name="phone_contact" type="text">
           </div>
 
           <div class="form-group">
-            <textarea class="form-control" rows="6" placeholder="Mensagem"></textarea>
+            <textarea class="form-control" rows="6" placeholder="Mensagem" name="message_contact" ></textarea>
           </div>
           <div class="row">
             <div class="col-xs-6 col-md-6">
@@ -116,6 +117,7 @@
             </div>
           </div>
         </form>
+
         <!-- end contact agent form -->
       </div>
 

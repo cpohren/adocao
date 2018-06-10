@@ -1,4 +1,5 @@
 class AnimalsController < ApplicationController
+  protect_from_forgery with: :null_session, only: :contact
     def index 
         @animals = Animal.all
     end
@@ -45,10 +46,20 @@ class AnimalsController < ApplicationController
           format.html { redirect_to mine_animals_url, notice: 'Animal was successfully destroyed.' }
         end
       end
-      
+      def contact
+        contact_data = {
+          name: params[:name_contact],
+          phone: params[:phone_contact],
+          email_from: params[:email_contact],
+          message: params[:message_contact],
+          animal_id: params[:animal_id]
+        }
+        AdoptionMailer.interested(contact_data).deliver
+        redirect_to animal_path(params[:animal_id])
+      end
       private 
       def animal_params
         params.require(:animal).permit(:name, :kind, :breed, :gender, :birth, :size, :neutered, :vaccinated, :description, :user_id)
       end
-
   end
+  
