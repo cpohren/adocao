@@ -29,9 +29,13 @@
   <div class="col-md-2"> </div>
     <div class="col-md-8">
        <%= render 'form' %>
+        <br>
+        <div class="col-xs-6 col-md-4">
+          <%= link_to "Excluir animal", animal_path(@animal), method: :delete, data: { confirm: "Tem certeza que deseja excluir este animal?" }, class: 'btn btn-danger' %>
+        </div>
     </div>
-    <div class="col-md-8 col-md-offset-2 " style="//padding-top:50px;">
-    <hr style="border-top: 1px solid #000000;">
+    <br>
+    <div class="well col-md-8 col-md-offset-2 " style="margin-top:50px;">
     <h5>Imagens</h5>
       <div class="row">
         <% @animal.files.each do |picture| %>
@@ -54,14 +58,8 @@
         <br>
         <div class="col-xs-6 col-md-4" style="padding:0px;">
           <%= f.submit 'Clique para enviar as imagens', :class => "btn btn-success" %>
-        </div>  
-        <div class="col-xs-6 col-md-4 col-md-offset-2">
-          <%= link_to "Excluir animal", animal_path(@animal), method: :delete, data: { confirm: "Tem certeza que deseja excluir este animal?" }, class: 'btn btn-danger' %>
         </div>
-        <br>
-        <br>
           <% end %>
-          <br>
          
       </div>
 </div>
