@@ -1,7 +1,18 @@
 class AnimalsController < ApplicationController
   protect_from_forgery with: :null_session, only: :contact
     def index 
-        @animals = Animal.all
+      #@animals = Animal.all
+            
+      @animals = Animal.where(nil) # creates an anonymous scope
+      if params[:filter]
+        @animals = @animals.with_kind(filter_params[:kind]) if filter_params[:kind].present?
+        @animals = @animals.with_gender(filter_params[:gender]) if filter_params[:gender].present?
+        @animals = @animals.with_size(filter_params[:size]) if filter_params[:size].present?
+        @animals = @animals.neutered(filter_params[:neutered]) if filter_params[:neutered].present?
+        @animals = @animals.vaccinated(filter_params[:vaccinated]) if filter_params[:vaccinated].present?
+      end
+      #byebug
+
     end
     def mine 
       @animals = current_user.animals.all
@@ -60,6 +71,9 @@ class AnimalsController < ApplicationController
       private 
       def animal_params
         params.require(:animal).permit(:name, :kind, :breed, :gender, :birth, :size, :neutered, :vaccinated, :description, :user_id)
+      end
+      def filter_params
+        params.require(:filter).permit(:kind, :breed, :gender, :size, :neutered, :vaccinated)
       end
   end
   

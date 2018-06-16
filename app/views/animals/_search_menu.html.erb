@@ -23,6 +23,17 @@
       </style>
 
       <div class="col-md-2">
+        <%= simple_form_for :filter, :url => animals_path, html: { novalidate: true }, :method => :get do |f| %>
+          <%= f.input :kind,     as: :radio_buttons, collection: Animal.kind.values, :required => false %>
+          <%= f.input :gender,     as: :radio_buttons, collection: Animal.gender.values, :required => false %>
+          <%= f.input :size,     as: :radio_buttons, collection: Animal.size.values, :required => false %>
+          <%= f.input :neutered,     as: :radio_buttons, collection: [['Não', '0'], ['Sim', '1']], :required => false %>
+          <%= f.input :vaccinated,     as: :radio_buttons, collection: [['Não', '0'], ['Sim', '1']], :required => false %>
+          <%= button_tag(type: 'submit', class: "btn btn-success btn-block btn-lg") do %>
+              <i class="fa fa-search"></i> 
+              Filtrar
+            <% end %>
+        <% end %>
         
         <div class="line">
         <h5 class="menu">Tipo de Animal</h5>

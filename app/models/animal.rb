@@ -4,8 +4,13 @@ class Animal < ActiveRecord::Base
   belongs_to :user
   
   extend Enumerize
-  enumerize :kind, in: [:dog, :cat, :other]
-  enumerize :gender, in: [:male, :female]
-  enumerize :size, in: [:small, :mid, :big]
+  enumerize :kind, in: [:dog, :cat, :other], scope: true
+  enumerize :gender, in: [:male, :female], scope: true
+  enumerize :size, in: [:small, :mid, :big], scope: true
+  
+  scope :neutered, -> (neutered) { where neutered: neutered }
+  scope :vaccinated, -> (vaccinated) { where vaccinated: vaccinated }
+  #TODO age scope
+  #TODO localization scope
 end
 
