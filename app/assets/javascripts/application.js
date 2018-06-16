@@ -18,6 +18,12 @@
 //= require fotorama
 //= require_tree .
 
+$( document ).ready(function() {
+    $('.fotorama').fotorama({
+      // options
+  })
+});
+
 $(document).on('turbolinks:load', function() {
   // Actions to do
   $('.fotorama').fotorama({
