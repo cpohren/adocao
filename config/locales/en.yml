@@ -30,4 +30,27 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+        animal: Animal
+    attributes:
+        animal:
+            kind: "Tipo de animal"
+  simple_form:
+    labels:
+      filter:
+        kind: 'Tipo de animal'
+        gender: 'Gênero'
+        size: "Porte"
+        neutered: "Castrado"
+        vaccinated: "Vacinado"
+        dog: "Cachorro"
+  enumerize:
+    animal:
+      gender:
+        male: "Macho"
+        female: "Fêmea"
+      kind:
+        dog: "Cachorro"
+        cat: "Gato"
+        other: "Outros"
