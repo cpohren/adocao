@@ -22,6 +22,7 @@ gem 'simple_form'  #gem para formulario
 gem "fotoramajs"
 gem 'devise'      #login
 gem 'enumerize'   #selecionar mais de um item
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
