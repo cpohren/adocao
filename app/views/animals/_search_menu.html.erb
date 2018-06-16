@@ -23,7 +23,7 @@
       </style>
 
       <div class="col-md-2">
-        <%= simple_form_for :filter, :url => animals_path, html: { novalidate: true }, :method => :get do |f| %>
+       <%= simple_form_for :filter, :url => animals_path, html: { novalidate: true }, :method => :get do |f| %>
           <%= f.input :kind,     as: :radio_buttons, collection: [['Cachorro', 'dog'], ['Gato', 'cat'],['Outros','other']], :required => false %>
           <%= f.input :gender,     as: :radio_buttons, collection: [['Macho', 'male'], ['Fêmea', 'female']], :required => false %>
           <%= f.input :size,     as: :radio_buttons, collection: [['Pequeno', 'small'], ['Médio', 'mid'],['Grande','big']], :required => false %>

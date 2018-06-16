@@ -14,7 +14,7 @@
           margin-top: 2px
         }
       </style>
-      <div id="fotorama" class="fotorama" data-auto="false" data-nav="thumbs" data-width="100%" data-ratio="800/600" data-thumb-height "46">
+      <div class="fotorama" data-nav="thumbs" data-width="100%" data-ratio="800/600" data-thumb-height "46">
         <% @animal.files.each do |file| %>
           <a href="<%= file.filename %>">
             <img src="<%= url_for(file) %>">
@@ -47,7 +47,7 @@
           </li>
           <li>
             <strong>Tipo:</strong>
-            <%= @animal.kind %>
+            <%= t("showpage.kind.#{@animal.kind}") %>
           </li>
           <li>
             <strong>Raça:</strong>
@@ -55,7 +55,7 @@
           </li>
           <li>
             <strong>Sexo:</strong>
-            <%= @animal.gender %>
+            <%= t("showpage.gender.#{@animal.gender}") %>
           </li>
           <li>
             <strong>Idade:</strong>
@@ -63,15 +63,15 @@
           </li>
           <li>
             <strong>Tamanho:</strong>
-            <%= @animal.size %>
+            <%= t("showpage.size.#{@animal.size}") %>
           </li>
           <li>
             <strong>Castrado:</strong>
-            <%= @animal.neutered %>
+            <%= t("showpage.#{@animal.neutered}") %>
           </li>
           <li>
             <strong>Vacinado:</strong>
-            <%= @animal.vaccinated %>
+            <%= t("showpage.#{@animal.vaccinated}") %>
           </li>
         </ul>
 

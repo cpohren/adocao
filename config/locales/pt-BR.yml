@@ -57,9 +57,27 @@ pt-BR:
   enumerize:
       animal:
         gender:
-        male: "Macho"
-        female: "Fêmea"
+          male: "Macho"
+          female: "Fêmea"
         kind:
-        dog: "Cachorro"
-        cat: "Gato"
-        other: "Outros"
+          dog: "Cachorro"
+          cat: "Gato"
+          other: "Outros"
+        size: 
+          small: "Pequeno"
+          mid: "Médio"
+          big: "Grande"
+  showpage:
+    :true: "Sim"
+    :false: "Não"
+    gender:
+      male: "Macho"
+      female: "Fêmea"
+    kind:
+      dog: "Cachorro"
+      cat: "Gato"
+      other: "Outros"
+    size: 
+      small: "Pequeno"
+      mid: "Médio"
+      big: "Grande"
