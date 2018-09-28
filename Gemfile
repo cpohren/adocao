@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0.rc2'
+gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -21,6 +21,8 @@ gem 'jquery-rails'
 gem 'simple_form'  #gem para formulario
 gem "fotoramajs"
 gem 'devise'      #login
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'enumerize'   #selecionar mais de um item
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 
