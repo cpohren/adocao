@@ -25,6 +25,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'enumerize'   #selecionar mais de um item
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
+gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

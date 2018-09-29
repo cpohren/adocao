@@ -53,7 +53,7 @@
     <h4 class="progress" style="display: none">Fazendo upload
       <span class="progress_count"></span>% concluido</h4>
     <%= form_with model: @animal, url: animal_file_uploads_path(@animal),
-          method: :post, id: "upload_file", local: true do |f| %>
+          method: :post, id: "upload_file", remote: true do |f| %>
       <%= f.file_field :files, multiple: true, direct_upload: true, :class => "btn" %>
         <br>
         <div class="col-xs-6 col-md-4" style="padding:0px;">
