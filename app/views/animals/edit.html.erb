@@ -41,7 +41,7 @@
         <% @animal.files.each do |picture| %>
           <div class="col-xs-6 col-md-3">
             <a href="<%= url_for(picture) %>" target="_blank" class="thumbnail">
-              <img src="<%= url_for(picture) %>" alt="<%= picture.filename  %>" class="img-responsive" style="max-height:150px;">
+              <img src="<%= url_for(picture.variant(combine_options: { resize: "145x145", extent: "145x145", background: "white", gravity: "center"})) %>" alt="<%= picture.filename  %>" class="img-responsive" style="max-height:150px;">
             </a>
             <div class="actions" style="text-align:center">
               <%= link_to "Remover", animal_file_upload_path(@animal, picture), method: :delete, data: { confirm: "Tem certeza?" }, class: 'btn btn-danger' %>
