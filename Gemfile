@@ -62,6 +62,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'mailcatcher'
   gem 'rails-erd', '~> 1.5', '>= 1.5.2'
+  gem 'pry', '~> 0.11.3'
 end
 
 group :test do

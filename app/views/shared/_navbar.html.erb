@@ -25,7 +25,7 @@
               <% if user_signed_in? %>
                 <li><a href="<%= destroy_user_session_path %>" data-method="delete"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <% else %>
-                <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
                 <% end%>
             </ul>
             </div>

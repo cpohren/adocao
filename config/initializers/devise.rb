@@ -41,7 +41,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+  config.authentication_keys = [:uid]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -281,4 +281,5 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.omniauth :facebook, '287693375176841', 'b6efe8bbb54b708f2ffc0ffbbc1c29c2', callback_url: "http://localhost:3000/users/auth/facebook/callback", scope: 'public_profile,user_birthday,user_link', info_fields: 'link,birthday,first_name,last_name'
 end
