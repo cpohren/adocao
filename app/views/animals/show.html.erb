@@ -17,7 +17,7 @@
       <div class="fotorama" data-nav="thumbs" data-width="100%" data-ratio="800/600" data-thumb-height "46">
         <% @animal.files.each do |file| %>
           <a href="<%= file.filename %>">
-            <img src="<%= url_for(file.variant(combine_options: { resize: "730x410^", extent: "730x410", background: "grey", gravity: "center"})) %>">
+            <img src="<%= url_for(file.variant(combine_options: { resize: "800x600^", extent: "800x600", background: "grey", gravity: "center"})) %>">
           </a>
         <% end %>
       </div>
@@ -59,7 +59,7 @@
           </li>
           <li>
             <strong>Idade:</strong>
-            <%= @animal.birth %>
+            <%= time_ago_in_words(@animal.birth) %>
           </li>
           <li>
             <strong>Tamanho:</strong>
@@ -72,6 +72,10 @@
           <li>
             <strong>Vacinado:</strong>
             <%= t("showpage.#{@animal.vaccinated}") %>
+          </li>
+          <li>
+            <strong>Cidade:</strong>
+            <%= t("showpage.#{@animal.city.to_s}") %>
           </li>
         </ul>
 

@@ -39,5 +39,6 @@
     </div>
   </div>
   <%= f.input :description %>
-  <%= f.button :submit, "Próximo passo", class: "btn btn-success" %>
+  <%= f.button :submit, 'Salvar', class: "btn btn-success" %>
+  <%= link_to 'Excluir animal', animal_path(@animal), method: :delete, data: { confirm: "Tem certeza que deseja excluir este animal?" }, class: 'btn btn-danger' %>
 <% end %>

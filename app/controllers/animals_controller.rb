@@ -70,10 +70,10 @@ class AnimalsController < ApplicationController
       end
       private 
       def animal_params
-        params.require(:animal).permit(:name, :kind, :breed, :gender, :birth, :size, :neutered, :vaccinated, :description, :user_id)
+        params.require(:animal).permit(:name, :city, :kind, :breed, :gender, :birth, :size, :neutered, :vaccinated, :description, :user_id)
       end
       def filter_params
-        params.require(:filter).permit(:kind, :breed, :gender, :size, :neutered, :vaccinated, :files [])
+        params.require(:filter).permit(:kind, :city, :breed, :gender, :size, :neutered, :vaccinated, :files [])
       end
   end
   
