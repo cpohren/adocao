@@ -1,13 +1,40 @@
 <%= simple_form_for @animal, defaults: { input_html: { class: 'form-horizontal' } } do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %> 
-  <%= f.input :name %>
-  <%= f.input :kind%> 
-  <%= f.input :breed %>
-  <%= f.input :gender %>
-  <%= f.input :birth %>
-  <%= f.input :size %>
-  <%= f.input :neutered %>
-  <%= f.input :vaccinated %>  
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <%= f.input :name, required: true,  class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-6">
+      <%= f.input :kind, required: true,  class: "form-control" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.input :breed, required: true,  class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-6">
+      <%= f.input :gender, required: true,  class: "form-control" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.input :size, required: true,  class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-6">
+      <%= f.input :vaccinated, required: false,  class: "form-control" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.input :neutered, required: false,  class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :birth, class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-3">
+      <%= f.date_field :birth, required: true,  class: "form-control" %>
+    </div>
+  </div>
   <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>
