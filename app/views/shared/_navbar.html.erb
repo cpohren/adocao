@@ -21,11 +21,13 @@
                 <% end%>
                 <li><a href="#contact">Sobre Nós</a></li>               
               </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right"style="padding-top: 10px;padding-right: 10px;">
               <% if user_signed_in? %>
-                <li><a href="<%= destroy_user_session_path %>" data-method="delete"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <ul><a class="btn-sm btn-block btn-social btn-facebook" href="<%= destroy_user_session_path %>" data-method="delete"><span class="glyphicon glyphicon-log-out"></span> Sair</a></ul>
                 <% else %>
-                <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+                <ul>
+                  <%= link_to '<span class="fa fa-facebook"></span>Entrar com Facebook'.html_safe, user_facebook_omniauth_authorize_path, class: "btn-sm btn-block btn-social btn-facebook" %>
+                </ul>
                 <% end%>
             </ul>
             </div>
