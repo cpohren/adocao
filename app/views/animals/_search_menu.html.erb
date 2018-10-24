@@ -29,6 +29,7 @@
           <%= f.input :size,     as: :radio_buttons, collection: [['Pequeno', 'small'], ['Médio', 'mid'],['Grande','big']], :required => false %>
           <%= f.input :neutered,     as: :radio_buttons, collection: [['Não', '0'], ['Sim', '1']], :required => false %>
           <%= f.input :vaccinated,     as: :radio_buttons, collection: [['Não', '0'], ['Sim', '1']], :required => false %>
+					<%= f.input :city,:collection => Animal.city.values,:label => "Cidade" ,:include_blank => true, :required => false %>
           <%= button_tag(type: 'submit', class: "btn btn-success btn-block btn-lg") do %>
               <i class="fa fa-search"></i> 
               Filtrar

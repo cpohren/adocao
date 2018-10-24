@@ -10,6 +10,7 @@ class AnimalsController < ApplicationController
         @animals = @animals.with_size(filter_params[:size]) if filter_params[:size].present?
         @animals = @animals.neutered(filter_params[:neutered]) if filter_params[:neutered].present?
         @animals = @animals.vaccinated(filter_params[:vaccinated]) if filter_params[:vaccinated].present?
+        @animals = @animals.with_city(filter_params[:city]) if filter_params[:city].present?
       end
       #byebug
 
@@ -73,7 +74,7 @@ class AnimalsController < ApplicationController
         params.require(:animal).permit(:name, :city, :kind, :breed, :gender, :birth, :size, :neutered, :vaccinated, :description, :user_id)
       end
       def filter_params
-        params.require(:filter).permit(:kind, :city, :breed, :gender, :size, :neutered, :vaccinated, :files [])
+        params.require(:filter).permit(:kind, :city, :breed, :gender, :size, :neutered, :vaccinated)
       end
   end
   
